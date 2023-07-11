@@ -14,11 +14,11 @@ const Post = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
       console.log(comments);
     });
@@ -27,7 +27,7 @@ const Post = () => {
   const addComment = () => {
     axios
       .post(
-        `http://localhost:3001/comments`,
+        `https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/comments`,
         {
           commentBody: newComment,
           PostId: id,
@@ -54,7 +54,7 @@ const Post = () => {
 
   const removeComment = (commentId) => {
     axios
-      .delete(`http://localhost:3001/comments/${commentId}`, {
+      .delete(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/comments/${commentId}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -68,7 +68,7 @@ const Post = () => {
 
   const deletePost = (postId) => {
     axios
-      .delete(`http://localhost:3001/posts/${postId}`, {
+      .delete(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/posts/${postId}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {

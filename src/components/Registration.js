@@ -13,15 +13,15 @@ const Registration = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    username: Yup.string().min(3).max(15).required("You must input a username"),
+    username: Yup.string().min(3).max(16).required("You must input a username"),
     password: Yup.string()
-      .min(4)
-      .max(20)
+      .min(8)
+      .max(16)
       .required("Password must be between 4 and 20 characters"),
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data)
+    axios.post("https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/auth", data)
     .then((response) => {
         navigate("/");
     })
@@ -29,7 +29,7 @@ const Registration = () => {
 
   return (
     <div className="outer-body">
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+      <Formik  onSubmit={onSubmit} initialValues={initialValues} validationSchema={validationSchema}>
         <Form className="form-container">
           <label>Username:</label>
           {/* names have to match SQL column names */}

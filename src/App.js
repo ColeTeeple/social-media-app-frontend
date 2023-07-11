@@ -16,7 +16,7 @@ function App() {
   const { authState, setAuthState } = useAuthContext();
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/auth/auth", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

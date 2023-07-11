@@ -9,7 +9,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts/").then((response) => {
+    axios.get("https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/posts/").then((response) => {
       console.log(response);
       setListOfPosts(response.data);
     });
@@ -17,7 +17,7 @@ const Home = () => {
 
   const likePost = (postId) => {
     axios.post(
-      "http://localhost:3001/likes",
+      "https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/likes",
       { PostId: postId },
       { headers: { accessToken: localStorage.getItem("accessToken") } }
     )

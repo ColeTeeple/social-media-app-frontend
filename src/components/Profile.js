@@ -10,11 +10,11 @@ const Profile = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/${id}`).then((response) => {
+    axios.get(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/auth/${id}`).then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get(`http://localhost:3001/posts/${id}`).then((response) => {
+    axios.get(`https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/posts/${id}`).then((response) => {
       setPosts(response.data);
       console.log(response.data[0].title);
     });

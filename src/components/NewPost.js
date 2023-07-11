@@ -20,7 +20,7 @@ const CreatePost = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/posts", data, {
+      .post("https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {

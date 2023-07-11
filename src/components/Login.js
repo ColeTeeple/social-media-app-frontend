@@ -27,7 +27,7 @@ const Login = () => {
 
   const login = () => {
     axios
-      .post("http://localhost:3001/auth/login", {
+      .post("https://ct2-social-media-app-api-fbe02f4bafbc.herokuapp.com/auth/login", {
         username: username,
         password: password,
       })
